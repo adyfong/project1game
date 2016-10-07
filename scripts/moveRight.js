@@ -3,13 +3,14 @@ $(document).ready(function(){
 var  $truck =  $('#truck');
 var  $berry =  $('#berry');
 var  $pear = $('#pear');
-var distance = 600;
-var dropf =100;
-
-//Berry falling
-//     setInterval(function(){
-//       $berry.animate({top: '+500'}, 1000);
-// });
+var  distance = 600;
+var timerCount = 0;
+var playgame = true;
+var gotFruit = 0;
+var caughtFruit = 0;
+var missedFruit = 0;
+var level = 1;
+var levels = { 1: 2000, 2: 1500, 3: 1000, 4: 700 }
 
 
 function truckmove(e){
@@ -45,30 +46,91 @@ function truckmove(e){
 // });
 //});
 var collided = false;
-function dropfruit() {
 
+// while (playgame){
+
+function dropfruit(howfast) {
+
+// if (playgame){
  if  (Math.floor(Math.random()*10) < 5) {
      $fruit =$berry
+     console.log('It is berry')
  } else {
     $fruit = $pear;
+    console.log('It is pear')
  }
 
- $fruit.css('top', '50px');
- $fruit.animate({top: '+500'}, {duration: 2000, queue: false, complete: function() {
+ // timerCount = setTimeout(gameOver, 60000);
+ //if ($(berry).is(":visible") == false) {
+  $berry.css('top', '50px');
+  $berry.attr('visiblity', 'visible')
+ //}
+ //if ($(pear).is(":visible") == false) {
+   $pear.css('top', '50px');
+   $pear.attr('visiblity', 'visible')
+ //}
+ $fruit.stop().animate({top: '+500'}, {duration: howfast, complete: function() {
           //alert("this is the berry left" + $berry.offset().left);
           //alert("this is the truck left x" + $truck.offset().left);
           //alert("this is the berry top" + $berry.offset().top);
           //alert("this is the trunk top y" + $truck.offset().top);
-          collided = collision($truck, $fruit);
-          if (collided == true) {
-            // return;
+          $fruit.attr('visiblity', 'hidden')
+           // $fruit.remove();
+          gotFruit = gotFruit + 1;
+          $('#getFruit').text(gotFruit);
+          if (gotFruit > 15) {
+            playgame = false;
+            level = level + 1;
           }
-          dropfruit();
-}})
+
+          collided = collision($truck, $fruit);
+          // $(this).remove();
+          if (collided == true) {
+            caughtFruit = caughtFruit + 1;
+            $('#catchFruit').text(caughtFruit);
+          } else {
+            missedFruit = missedFruit + 1;
+            $('#missFruit').text(missedFruit);
+          }
+
+          if (missedFruit > 2) {
+            playgame = false;
+          }
+
+          if (playgame == false) {
+            return
+          }
+
+// function gameOver() {
+//          playgame = 0;
+//          clearTimeout(timerCount);
+//          timerCount = 0;
+//          }
+
+          // id(score === 50){
+          //   end function
+          // }else {}
+            dropfruit(howfast);
+}});
 }
 
-alert('blah blah blahx');
-dropfruit();
+//Closing dropfruit
+$('#button1').click(callPlay);
+function callPlay(){
+  if (level > 4) {
+    alert('Congratulations! You win!!!')
+    return
+  }
+  playgame = true;
+  gotFruit = 0;
+  caughtFruit = 0;
+  missedFruit = 0;
+  $('#missFruit').text(missedFruit);
+  alert('Starting Level ' + level)
+  dropfruit(levels[level]);
+}
+
+
 function collision($truck, $fruit){
 
  var x1 = $truck.offset().left;
@@ -84,17 +146,6 @@ if ((x1 == x2) && (y1 < y2)){
 return false;
 }
 
-
-
-// $(function() {
-//   setInterval(ponyTrot, 1);
-
-// for (i=1, i<5, i++){
-//  setTimeout(function(){
-  // setTimeout(function() {
-//          $berry.css('top', dropf + 'px');
-          // dropf = dropf + 50;
- //       },1000);
-//  // });
-// }
+// };  while Loop
 });
+

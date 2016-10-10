@@ -14,9 +14,16 @@ var  missedFruit = 0;
 var  level = 1;
 var  levels = { 1: 2000, 2: 1500, 3: 1000, 4: 700 }
 
-// var currentDiver = $('#player');
+var currentDiver = $('#player');
+
+var queryString = window.location.search.split('=')[1];
+var player = queryString.split('&');
+// alert(player);
+$('#player').text(player);
+
 // currentDiver.text(window.location.search.split('=')[1]);
-// alert("Hi" + currentDiver + "ready to play");
+// currentDiver.text(currentDiver.split('='));
+// // alert("Hi" + currentDiver + "ready to play");
 
 
 function truckmove(e){

@@ -6,7 +6,7 @@ body {
   text-align: center;
   background-repeat:no-repeat;
   background-size: cover;*/
-  overflow: hidden;
+ /* overflow: hidden;*/
 }
 
 #truck {
@@ -18,24 +18,43 @@ body {
   left: 600px;
 }
 
+#strawberry {
+  content: url("../assets/strawberry.png");
+  position:absolute;
+  top: 50px;
+  width:50px;
+  height:50px;
+  left: 300px;
+}
+
+
 #berry {
   content: url("../assets/berry.png");
   position:absolute;
   top: 50px;
-  left: 400px;
   width:50px;
   height:50px;
+  left: 450px;
 }
 
 #pear {
   content: url("../assets/pear.png");
   position:absolute;
   top: 50px;
-  left: 800px;
   width:50px;
   height:50px;
+  left: 750px;
 }
 
+#apple {
+content: url("../assets/apple.png");
+  position:absolute;
+  top: 50px;
+  left: 900px;
+  width:50px;
+  height:50px;
+
+}
 .gameBoard {
   display: inline-block;
   margin: 0 auto;

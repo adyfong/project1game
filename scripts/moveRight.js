@@ -1,26 +1,28 @@
 $(document).ready(function(){
 
 var  $truck =  $('#truck');
+var  $strawberry = $('#strawberry');
 var  $berry =  $('#berry');
 var  $pear = $('#pear');
+var  $apple = $('#apple');
 var  distance = 600;
-var timerCount = 0;
-var playgame = true;
-var gotFruit = 0;
-var caughtFruit = 0;
-var missedFruit = 0;
-var level = 1;
-var levels = { 1: 2000, 2: 1500, 3: 1000, 4: 700 }
+var  timerCount = 0;
+var  playgame = true;
+var  gotFruit = 0;
+var  caughtFruit = 0;
+var  missedFruit = 0;
+var  level = 1;
+var  levels = { 1: 2000, 2: 1500, 3: 1000, 4: 700 }
 
 
 function truckmove(e){
 // //move right
    $truck.css('left', distance + 'px');
    if(e.keyCode == 39) {
-          distance = distance + 200;
+          distance = distance + 150;
            $truck.css('left', distance + 'px');
        } else if (e.keyCode == 37) {
-      distance = distance - 200;
+      distance = distance - 150;
       $truck.css('left', distance + 'px');
        } else {
         distance = 600
@@ -52,16 +54,45 @@ var collided = false;
 function dropfruit(howfast) {
 
 // if (playgame){
- if  (Math.floor(Math.random()*10) < 5) {
-     $fruit =$berry
-     console.log('It is berry')
- } else {
-    $fruit = $pear;
-    console.log('It is pear')
- }
+ // if  (Math.floor(Math.random()*10) < 5) {
+ //     // $fruit =$berry;
+ //     // console.log('It is berry')
+ //      $fruit =$apple;
+ //     console.log('It is apple')
+ // } else {
+ //    $fruit = $pear;
+ //    console.log('It is pear')
+ // }
+
+switch (Math.floor(Math.random()*10)) {
+    case 0:
+    case 1:
+    case 2:
+        $fruit = $strawberry;
+        break;
+    case 3:
+    case 4:
+        $fruit = $berry;
+        break;
+    case 5:
+    case 6:
+        $fruit = $pear;;
+        break;
+    case 7:
+    case 8:
+        $fruit = $apple;
+        break;
+  }
+
 
  // timerCount = setTimeout(gameOver, 60000);
  //if ($(berry).is(":visible") == false) {
+  $strawberry.css('top', '50px');
+  $strawberry.attr('visiblity', 'visible')
+
+  $apple.css('top', '50px');
+  $apple.attr('visiblity', 'visible')
+
   $berry.css('top', '50px');
   $berry.attr('visiblity', 'visible')
  //}
@@ -70,11 +101,7 @@ function dropfruit(howfast) {
    $pear.attr('visiblity', 'visible')
  //}
  $fruit.stop().animate({top: '+500'}, {duration: howfast, complete: function() {
-          //alert("this is the berry left" + $berry.offset().left);
-          //alert("this is the truck left x" + $truck.offset().left);
-          //alert("this is the berry top" + $berry.offset().top);
-          //alert("this is the trunk top y" + $truck.offset().top);
-          $fruit.attr('visiblity', 'hidden')
+         $fruit.attr('visiblity', 'hidden');
            // $fruit.remove();
           gotFruit = gotFruit + 1;
           $('#getFruit').text(gotFruit);

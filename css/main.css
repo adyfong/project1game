@@ -1,0 +1,49 @@
+.topContainer {
+    display:inline-block;
+    background-color:red;
+    padding-left: 100px;
+    width: 30%;
+    height: 150px;
+}
+
+.topRight {
+    display:inline-block;
+    justify-content:flex-end;
+    background-color:blue;
+    width: 30%;
+    padding-left: 360px;
+    margin-left: auto;
+    height: 150px;
+  }
+
+#mainlogo {
+  content: url("../assets/KYF2.png");
+  display:inline-block;
+  background-color: green;
+  width: 20%;
+  position:absolute;
+  height:150px;
+  top: 10px;
+  left: 500px;
+}
+
+.funFont  {
+  font-family: Lobster;
+  font-size: 30px;
+  color: rgb(0,101,54);
+}
+
+.middleContainer{
+    height: 600px;
+    background-color: rgb(255,252,222);
+}
+
+.textMiddle {
+  padding-top: 200px;
+  text-align: center;
+  width: 500px;
+  font-size: 30px;
+  font-style: normal;
+  color: rgb(0,101,54);
+  margin: 0 auto;
+}

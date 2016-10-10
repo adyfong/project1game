@@ -27,7 +27,6 @@ body {
   left: 300px;
 }
 
-
 #berry {
   content: url("../assets/berry.png");
   position:absolute;
@@ -36,6 +35,17 @@ body {
   height:50px;
   left: 450px;
 }
+
+
+input[type=button] {
+    background-color: rgb(132,208,1);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 20px 90px;
+}
+
 
 #pear {
   content: url("../assets/pear.png");
@@ -57,13 +67,14 @@ content: url("../assets/apple.png");
 }
 .gameBoard {
   display: inline-block;
-  margin: 0 auto;
+ /* margin: 0 auto;*/
   color: blue;
   border-color: black;
   border-style: solid;
   text-align: center;
   height: 150px;
   width:  200px;
+  margin: 10px 0px 0px 40px;
   font-family: "Times New Roman", Georgia, Serif;
 }
 

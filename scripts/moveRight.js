@@ -14,6 +14,10 @@ var  missedFruit = 0;
 var  level = 1;
 var  levels = { 1: 2000, 2: 1500, 3: 1000, 4: 700 }
 
+// var currentDiver = $('#player');
+// currentDiver.text(window.location.search.split('=')[1]);
+// alert("Hi" + currentDiver + "ready to play");
+
 
 function truckmove(e){
 // //move right
@@ -28,7 +32,14 @@ function truckmove(e){
         distance = 600
         }
  }
+
  $(document).keydown(truckmove);
+
+
+// testing getting field
+
+//file:///Users/adyfong/code/wdi/lab/project-1-game/index.html?fname=Mike&lname=Smith
+
 
 //Berry falling
 //var  timerId =0;
@@ -108,6 +119,7 @@ switch (Math.floor(Math.random()*10)) {
           if (gotFruit > 15) {
             playgame = false;
             level = level + 1;
+            alert('Great Job! Press Start for Level!!!' + level )
           }
 
           collided = collision($truck, $fruit);
@@ -141,6 +153,7 @@ switch (Math.floor(Math.random()*10)) {
 }});
 }
 
+
 //Closing dropfruit
 $('#button1').click(callPlay);
 function callPlay(){
@@ -153,7 +166,7 @@ function callPlay(){
   caughtFruit = 0;
   missedFruit = 0;
   $('#missFruit').text(missedFruit);
-  alert('Starting Level ' + level)
+  // alert('Starting Level ' + level)
   dropfruit(levels[level]);
 }
 

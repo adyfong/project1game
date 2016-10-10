@@ -1,6 +1,6 @@
 .topContainer {
     display:inline-block;
-    background-color:red;
+    background-color:white;
     padding-left: 100px;
     width: 30%;
     height: 150px;
@@ -9,7 +9,7 @@
 .topRight {
     display:inline-block;
     justify-content:flex-end;
-    background-color:blue;
+    background-color:white;
     width: 30%;
     padding-left: 360px;
     margin-left: auto;
@@ -19,13 +19,45 @@
 #mainlogo {
   content: url("../assets/KYF2.png");
   display:inline-block;
-  background-color: green;
+  background-color: white;
   width: 20%;
   position:absolute;
   height:150px;
   top: 10px;
   left: 500px;
 }
+
+h3 {
+color: rgb(0,101,54);
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+h4 {
+  color:black;
+  margin-top: 1px;
+}
+
+/*#displayInfo {
+  display:flex;
+}
+
+#enterInfo{
+  display:flex;
+}*/
+
+.flex-container{
+  background-color: rgb(132,208,1);
+  display: flex;
+  height: 200px;
+}
+
+.flex-item {
+    width: 40%;
+    height: 100px;
+    margin: 40px 150px;
+}
+
 
 .funFont  {
   font-family: Lobster;
@@ -39,11 +71,21 @@
 }
 
 .textMiddle {
-  padding-top: 200px;
+  padding: 50px;
   text-align: center;
   width: 500px;
   font-size: 30px;
   font-style: normal;
   color: rgb(0,101,54);
   margin: 0 auto;
+}
+
+
+input[type=submit] {
+    background-color: rgb(209,37,29);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
 }

@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Know Your Fruit</title>
+    <title>KnowYourFruit</title>
+    <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" charset="utf-8"></script>
-<!-- <script src="scripts/motion.js"></script> -->
-<script src="scripts/moveRight.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
-  </head>
-  <body>
-    <div class="gameBoard">
-          <h2>Welcome <span id="player"></span></h2>
-          <h3>Fruits Drop  <span id="getFruit">0</span> fruit</h3>
-          <h3>You caught  <span id="catchFruit">0</span> fruit</h3>
-          <h3>You missed <span id="missFruit">0</span> fruit</h3>
+</head>
+<body>
+<!--
+This is the landing page -->
+ <div class="topContainer">
+    <img src="assets/appleTop.png" alt="strawberry" height="100" width="150">
+    <img src="assets/berryTop.png" alt="strawberry" height="100" width="150">
+ </div>
+ <div class="topRight">
+   <img src="assets/strawberryTop.png" alt="strawberry" height="100" width="150">
+   <img src="assets/pearTop.png" alt="strawberry" height="100" width="150" >
+ </div>
+ <div  class="middleContainer">
+  <div class="textMiddle">
+    <p>Hi, we're <span class="funFont">KNOW YOUR FRUIT</span> and we need your help to collect our <span class="funFont">Delicious & Tasty</span> fruits. So pick
+    <span class="funFont">Apples, Berry, Straberry, Pears</span> with our super fast <span class="funFont">RED TRUCK.
+    </span> This is <span class="funFont">100%  Real  Fruit</span> you can snack on.</p>
     </div>
 
-      <div id="fruit"></div>
-      <div id="strawberry"></div>
-      <div id="berry"></div>
-      <div id="pear"></div>
-      <div id="apple"></div>
-      <div id="truck"></div>
-      <div id="player"></div>
+<div class="flex-container">
+<div class="flex-item" id="displayInfo">
+   <h3> SIGN UP FOR THE GAME! </h3>
+   <h4> Learn about product updates, savings & more!</h4>
+</div>
 
+<div class="flex-item" id="enterInfo">
+  <form action="indexgame.html" method="get" name="myForm">
+    First name: <input type="text" name="fname"><br>
+ <!--    Last name: <input type="text" name="lname"> -->
+    <input type="submit" onclick="formSubmit()" value="Let's Play!">
+  </form>
+</div>
+</div>
+</div>
 
-
-<input id="button1" type=button value='Start Here'>
-
-
+ </body>
+ <div id="mainlogo"></div>
 </body>
+
 </html>

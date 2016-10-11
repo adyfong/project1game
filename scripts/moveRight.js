@@ -13,12 +13,11 @@ var  caughtFruit = 0;
 var  missedFruit = 0;
 var  level = 1;
 var  levels = { 1: 2000, 2: 1500, 3: 1000, 4: 700 }
-
 var currentDiver = $('#player');
 
+// getting the player's name
 var queryString = window.location.search.split('=')[1];
 var player = queryString.split('&');
-// alert(player);
 $('#player').text(player);
 
 // currentDiver.text(window.location.search.split('=')[1]);
@@ -26,6 +25,7 @@ $('#player').text(player);
 // // alert("Hi" + currentDiver + "ready to play");
 
 
+//Trunk is moving
 function truckmove(e){
 // //move right
    $truck.css('left', distance + 'px');
@@ -45,30 +45,13 @@ function truckmove(e){
 
 // testing getting field
 
-//file:///Users/adyfong/code/wdi/lab/project-1-game/index.html?fname=Mike&lname=Smith
 
-
-//Berry falling
-//var  timerId =0;
-    //timerId = setInterval(function(){
-      //$berry.animate({top: '+500'}, 2000);
-      // function($truck, $berry) {
-      //   $(this).remove();
-
-      // if ($berry.offset().left >= $trunk.offset().left){
-          // alert("this is the berry left" + $berry.offset().left);
-          // alert("this is the truck left x" + $truck.offset().left);
-          // alert("this is the berry top" + $berry.offset().top);
-          // alert("this is the trunk top y" + $truck.offset().top);
-    // if $berry.offset().top = 450{
-    //   clearInterval(timerId);
-    // }
-// });
-//});
 var collided = false;
 
-// while (playgame){
 
+
+
+// Fruit Falling
 function dropfruit(howfast) {
 
 // if (playgame){
@@ -128,6 +111,8 @@ switch (Math.floor(Math.random()*10)) {
             level = level + 1;
             alert('Great Job! Press Start for Level!!!' + level )
           }
+
+//Checking Counts
 
           collided = collision($truck, $fruit);
           // $(this).remove();

@@ -89,3 +89,10 @@ input[type=submit] {
     text-decoration: none;
     margin: 4px 2px;
 }
+
+@media (max-width: 800px) {
+ .container{
+  display:flex;
+  flex-direction:column;
+
+  }
